@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meissy Masai | Applied Computing Graduate</title>
+<meta name="description" content="Portfolio of Meissy Masai, Applied Computing graduate from Jomo Kenyatta University of Agriculture and Technology (JKUAT), Kenya.">
+<meta property="og:title" content="Meissy Masai | Applied Computing Graduate">
+<meta property="og:description" content="Applied Computing graduate from JKUAT. Software, web, databases and networks.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F8;
+  --ink:#16213A;
+  --muted:#5A6479;
+  --rule:#D5DAE3;
+  --marigold:#F2A900;
+  --teal:#0E6F68;
+  --card:#FFFFFF;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1626;
+    --ink:#EEF1F7;
+    --muted:#A3ADC2;
+    --rule:#26314A;
+    --card:#16203A;
+    --teal:#4CC3B9;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1626;
+  --ink:#EEF1F7;
+  --muted:#A3ADC2;
+  --rule:#26314A;
+  --card:#16203A;
+  --teal:#4CC3B9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+header.bar{
+  position:sticky;top:0;z-index:10;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.mark{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em}
+nav{display:flex;gap:22px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink);border-bottom-color:var(--marigold)}
+
+/* hero */
+.hero{padding:88px 0 72px;border-bottom:1px solid var(--rule)}
+.hero h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(3.4rem,11.5vw,8.6rem);
+  line-height:.92;
+  letter-spacing:-.045em;
+  margin:0 0 34px;
+}
+.hero h1 span{display:block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.12s;margin-left:clamp(0px,6vw,90px)}
+.hero h1 .hl{
+  background:linear-gradient(transparent 62%,var(--marigold) 62%,var(--marigold) 92%,transparent 92%);
+  display:inline;
+}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.lede{max-width:34rem;font-size:1.25rem;color:var(--ink);margin:0 0 30px}
+.lede small{display:block;color:var(--muted);font-size:1rem;margin-top:8px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:600;font-size:1rem;text-decoration:none;
+  padding:13px 22px;border-radius:999px;border:2px solid var(--ink);
+  transition:background .15s,color .15s,transform .15s;
+}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--marigold);border-color:var(--marigold);color:#16213A}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:active{transform:translateY(1px)}
+
+/* sections */
+section{padding:72px 0;border-bottom:1px solid var(--rule)}
+.split{display:grid;grid-template-columns:200px 1fr;gap:40px}
+h2{
+  font-family:var(--display);font-weight:700;
+  font-size:1.5rem;letter-spacing:-.02em;margin:0;line-height:1.2;
+}
+.split p{margin:0 0 1.1em;max-width:40rem}
+.split p:last-child{margin-bottom:0}
+
+.edu{max-width:40rem}
+.edu .deg{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.015em;margin:0}
+.edu .uni{margin:2px 0 0;color:var(--muted)}
+
+.skills{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;max-width:46rem}
+.skills li{padding:18px 0;border-top:1px solid var(--rule)}
+.skills li:nth-last-child(-n+2){border-bottom:1px solid var(--rule)}
+.skills strong{display:block;font-family:var(--display);font-weight:700;font-size:1.1rem;letter-spacing:-.01em}
+.skills span{color:var(--muted);font-size:.98rem}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper);border-bottom:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact{background:#0A101D}}
+:root[data-theme="dark"] .contact{background:#0A101D}
+.contact h2{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;max-width:16ch}
+.contact p{max-width:34rem;color:color-mix(in srgb,var(--paper) 78%,transparent);margin:18px 0 28px}
+.contact .btn{border-color:var(--paper)}
+.contact .btn.primary{background:var(--marigold);border-color:var(--marigold);color:#16213A}
+.contact .btn.primary:hover{background:var(--paper);border-color:var(--paper)}
+.contact .btn.ghost{color:var(--paper)}
+.contact .btn.ghost:hover{background:var(--paper);color:var(--ink)}
+.phone{font-family:var(--display);font-weight:700;font-size:1.4rem;margin-top:26px;letter-spacing:.01em}
+footer{padding:26px 0;font-size:.9rem;color:var(--muted)}
+.contact + footer{background:var(--paper)}
+
+@media (max-width:760px){
+  nav{gap:16px;font-size:.9rem}
+  .hero{padding:56px 0 52px}
+  .split{grid-template-columns:1fr;gap:18px}
+  .skills{grid-template-columns:1fr}
+  .skills li:nth-last-child(2){border-bottom:0}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 span{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">Meissy Masai</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1><span>Meissy</span><span><em style="font-style:normal" class="hl">Masai</em></span></h1>
+      <p class="lede">
+        Applied Computing graduate from Jomo Kenyatta University of Agriculture and Technology, ready to build, support and improve the systems people rely on.
+        <small>Software, web, databases and networks.</small>
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="tel:+254799204605">Call 0799 204 605</a>
+        <a class="btn ghost" href="https://wa.me/254799204605" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap split">
+      <h2>About</h2>
+      <div>
+        <p>I am a Kenyan graduate in Applied Computing. My degree trained me to take a problem, work out what a system needs to do, and build something that does it reliably.</p>
+        <p>I care about software that is clear to use and easy to maintain, and I enjoy the practical side of computing: getting a database to answer the right question, a website to load quickly, or a network to stay up.</p>
+        <p>I am looking for a team where I can apply what I studied, keep learning, and take on real responsibility early.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap split">
+      <h2>Education</h2>
+      <div class="edu">
+        <p class="deg">Bachelor of Science in Applied Computing</p>
+        <p class="uni">Jomo Kenyatta University of Agriculture and Technology (JKUAT), Kenya</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap split">
+      <h2>What I work with</h2>
+      <ul class="skills">
+        <li><strong>Programming</strong><span>Writing and debugging software that solves a defined problem.</span></li>
+        <li><strong>Web development</strong><span>Building and maintaining responsive websites.</span></li>
+        <li><strong>Databases</strong><span>Designing tables and writing SQL to store and retrieve data.</span></li>
+        <li><strong>Networking</strong><span>Understanding how devices, protocols and services connect.</span></li>
+        <li><strong>Systems analysis and design</strong><span>Turning requirements into a clear, workable plan.</span></li>
+        <li><strong>IT support</strong><span>Diagnosing problems and explaining fixes in plain language.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!--
+  PROJECTS: when Meissy has a project to show, paste this block between the Skills and Contact sections.
+
+  <section id="projects">
+    <div class="wrap split">
+      <h2>Projects</h2>
+      <ul class="skills">
+        <li><strong>Project name</strong><span>One sentence on what it does and what she built. <a href="https://github.com/USERNAME/REPO">View on GitHub</a></span></li>
+      </ul>
+    </div>
+  </section>
+  -->
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's talk about your next hire or project.</h2>
+      <p>The quickest way to reach me is a call or a WhatsApp message.</p>
+      <div class="actions">
+        <a class="btn primary" href="tel:+254799204605">Call now</a>
+        <a class="btn ghost" href="https://wa.me/254799204605" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="phone">0799 204 605</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> Meissy Masai</div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
